@@ -1,0 +1,59 @@
+
+
+
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-body">
+
+
+        <form action="">
+
+          <div class="form-group">
+            <input type="text" name="nombre" [(ngModel)]="varonq.nombre" 
+            placeholder="Nombre" class="form-control" autofocus>
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" name="description" [(ngModel)]="varonq.apellido" 
+            placeholder="Apellido" class="form-control">
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" name="direccion" [(ngModel)]="varonq.direccion" 
+            placeholder="Direccion" class="form-control">
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" name="telefono" [(ngModel)]="varonq.telefono" 
+            placeholder="Telefono" class="form-control">
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" name="email" [(ngModel)]="varonq.email" 
+            placeholder="Email" class="form-control">
+          </div>
+
+
+          <div class="form-group">
+            <select [(ngModel)]="varonq.pais!.id" class="form-control" name="pais">
+              <option value="0"> Seleccione Pais </option>
+              <option *ngFor="let pais of listPaises" [ngValue]="pais.id">{{pais.nombre}}</option>
+            </select>
+          </div>
+          
+
+          <!-- indica si "edit" es true ejecuta 'updateVaron()', si es false ejecuta 'saveNewVaronX()'-->
+          <button class="btn btn-success btn-block" (click)="edit ? updateVaronX() : saveNewVaronX()">
+            Grabar
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+

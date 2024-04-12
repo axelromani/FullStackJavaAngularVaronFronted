@@ -1,0 +1,35 @@
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Email</th>
+        <th>Pais</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let varonz of varonesX">
+          
+        <td>{{varonz.nombre}}</td>
+        <td>{{varonz.apellido}}</td>
+        <td>{{varonz.direccion}}</td>
+        <td>{{varonz.telefono}}</td>
+        <td>{{varonz.email}}</td>
+        <td >{{varonz.pais.nombre}}</td>
+
+
+        <td><a class="btn btn-info" [routerLink]="['/varon/editar', varonz.id]">Editar</a></td>
+
+        <td><button class="btn btn-danger" (click)="deleteVaronX(varonz.id)">
+            <i class="far fa-trash-alt"></i>
+          </button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+
